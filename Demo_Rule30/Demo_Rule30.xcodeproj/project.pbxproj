@@ -13,6 +13,7 @@
 		95E3A3B7209B54FB0058239F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B6209B54FB0058239F /* Assets.xcassets */; };
 		95E3A3BA209B54FB0058239F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B8209B54FB0058239F /* LaunchScreen.storyboard */; };
 		95E3A3C5209B54FC0058239F /* Demo_Rule30Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */; };
+		95E3A3D3209B561B0058239F /* Rule30Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3D2209B561B0058239F /* Rule30Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		95E3A3C0209B54FC0058239F /* Demo_Rule30Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_Rule30Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_Rule30Tests.swift; sourceTree = "<group>"; };
 		95E3A3C6209B54FC0058239F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95E3A3D2209B561B0058239F /* Rule30Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule30Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				95E3A3AE209B54F90058239F /* Demo_Rule30 */,
-				95E3A3C3209B54FC0058239F /* Demo_Rule30Tests */,
+				95E3A3C3209B54FC0058239F /* Tests */,
 				95E3A3AD209B54F90058239F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,23 +79,56 @@
 		95E3A3AE209B54F90058239F /* Demo_Rule30 */ = {
 			isa = PBXGroup;
 			children = (
-				95E3A3AF209B54F90058239F /* AppDelegate.swift */,
-				95E3A3B1209B54F90058239F /* ViewController.swift */,
-				95E3A3B3209B54F90058239F /* Main.storyboard */,
-				95E3A3B6209B54FB0058239F /* Assets.xcassets */,
-				95E3A3B8209B54FB0058239F /* LaunchScreen.storyboard */,
-				95E3A3BB209B54FB0058239F /* Info.plist */,
+				95E3A3D4209B56240058239F /* Model */,
+				95E3A3D0209B55D10058239F /* View */,
+				95E3A3CF209B55BC0058239F /* Controller */,
+				95E3A3D1209B55F10058239F /* Other */,
 			);
 			path = Demo_Rule30;
 			sourceTree = "<group>";
 		};
-		95E3A3C3209B54FC0058239F /* Demo_Rule30Tests */ = {
+		95E3A3C3209B54FC0058239F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */,
 				95E3A3C6209B54FC0058239F /* Info.plist */,
 			);
-			path = Demo_Rule30Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		95E3A3CF209B55BC0058239F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95E3A3B1209B54F90058239F /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95E3A3D0209B55D10058239F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95E3A3B6209B54FB0058239F /* Assets.xcassets */,
+				95E3A3B8209B54FB0058239F /* LaunchScreen.storyboard */,
+				95E3A3B3209B54F90058239F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95E3A3D1209B55F10058239F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				95E3A3BB209B54FB0058239F /* Info.plist */,
+				95E3A3AF209B54F90058239F /* AppDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		95E3A3D4209B56240058239F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95E3A3D2209B561B0058239F /* Rule30Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E3A3D3209B561B0058239F /* Rule30Model.swift in Sources */,
 				95E3A3B2209B54F90058239F /* ViewController.swift in Sources */,
 				95E3A3B0209B54F90058239F /* AppDelegate.swift in Sources */,
 			);
@@ -360,7 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KM4Q5Z4QE8;
-				INFOPLIST_FILE = Demo_Rule30/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo_Rule30/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +414,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KM4Q5Z4QE8;
-				INFOPLIST_FILE = Demo_Rule30/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Demo_Rule30/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
