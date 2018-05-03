@@ -63,10 +63,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         let stack = cell.stackView as UIStackView
-        guard let currentArray = model.getRow(indexPath.row) else {return cell}
-        let array = arrayOfViews(currentArray)
-        for view in array{
-            stack.addArrangedSubview(view)
+        stack.subviews.forEach { $0.removeFromSuperview() }
+        if stack.subviews.count == 0 {
+            guard let currentArray = model.getRow(indexPath.row) else {return cell}
+            let array = arrayOfViews(currentArray)
+            for view in array{
+                stack.addArrangedSubview(view)
+            }
         }
         return cell
         

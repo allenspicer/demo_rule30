@@ -15,7 +15,7 @@ final class Rule30Model : Rule30ModelProtocol {
     private var modelDataDictionary = [Int:[Bool]]()
     
      func generateRowsAndReturnCount () -> Int{
-        modelDataDictionary = generateRows(numberOfRowsToGenerate: 50, numberOfColumnsToGenerate: 60)
+        modelDataDictionary = generateRows(numberOfRowsToGenerate: 200, numberOfColumnsToGenerate: 200)
         
         displayDataDictionary =  modelDataDictionary
         
