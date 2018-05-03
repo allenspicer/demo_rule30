@@ -11,6 +11,19 @@ import Foundation
 
 class Rule30Model : Rule30ModelProtocol {
     
+    var data = [Int:[Bool]]()
+    
+    func generateRowsAndReturnCount () -> Int{
+        
+        return data.count
+    }
+
+    func getRow(_ rowIndex :Int ) -> [Bool]?{
+        
+        //check that the requested index is contained in the dataset
+        return nil
+    }
+    
     func isCellTrue(_ previousRowArrayOfBools : [Bool], indexForCell : Int ) -> Bool?{
         
         //if the cell in question is on the edge
