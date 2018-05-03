@@ -28,6 +28,13 @@ class Rule30Model : Rule30ModelProtocol {
         //scenario one: all cells above are true
         if (a && b && c){ return false}
         
+        //all other scenarios
+        if (a && !b && c){ return false}
+        if (a && !b && !c){ return true}
+        if (!a && b && c){ return true}
+        if (!a && b && !c){ return true}
+        if (!a && !b && c){ return true}
+        if (!a && !b && !c){ return false}
         
         return nil
     }

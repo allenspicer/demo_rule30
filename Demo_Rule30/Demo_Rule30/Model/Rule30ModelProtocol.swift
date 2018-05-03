@@ -10,6 +10,8 @@ import Foundation
 
 protocol Rule30ModelProtocol {
     
+    func isCellTrue(_ previousRowArrayOfBools : [Bool], indexForCell : Int ) -> Bool?
+
 }
 
 
