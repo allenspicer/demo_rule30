@@ -1,5 +1,5 @@
 //
-//  Rule30Model.swift
+//  Rule30ModelProtocol.swift
 //  Demo_Rule30
 //
 //  Created by uBack on 5/3/18.
@@ -8,12 +8,8 @@
 
 import Foundation
 
-
-class Rule30Model : Rule30ModelProtocol {
-    
-    func isCellTrue() -> Bool?{
-        return nil
-    }
-
+protocol Rule30ModelProtocol {
     
 }
+
+

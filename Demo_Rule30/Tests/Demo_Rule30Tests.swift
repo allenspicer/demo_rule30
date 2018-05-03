@@ -33,4 +33,11 @@ class Demo_Rule30Tests: XCTestCase {
         }
     }
     
+    
+    func test_model_returns_false_scenario_one(){
+        let model = Rule30Model()
+        let bool = model.isCellTrue()
+        XCTAssert(bool == false)
+    }
+    
 }

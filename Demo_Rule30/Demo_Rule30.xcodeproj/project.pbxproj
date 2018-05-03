@@ -14,6 +14,7 @@
 		95E3A3BA209B54FB0058239F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B8209B54FB0058239F /* LaunchScreen.storyboard */; };
 		95E3A3C5209B54FC0058239F /* Demo_Rule30Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */; };
 		95E3A3D3209B561B0058239F /* Rule30Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3D2209B561B0058239F /* Rule30Model.swift */; };
+		95E3A3D6209B57780058239F /* Rule30ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3D5209B57780058239F /* Rule30ModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_Rule30Tests.swift; sourceTree = "<group>"; };
 		95E3A3C6209B54FC0058239F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95E3A3D2209B561B0058239F /* Rule30Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule30Model.swift; sourceTree = "<group>"; };
+		95E3A3D5209B57780058239F /* Rule30ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule30ModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				95E3A3D2209B561B0058239F /* Rule30Model.swift */,
+				95E3A3D5209B57780058239F /* Rule30ModelProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				95E3A3D3209B561B0058239F /* Rule30Model.swift in Sources */,
 				95E3A3B2209B54F90058239F /* ViewController.swift in Sources */,
+				95E3A3D6209B57780058239F /* Rule30ModelProtocol.swift in Sources */,
 				95E3A3B0209B54F90058239F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +437,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KM4Q5Z4QE8;
-				INFOPLIST_FILE = Demo_Rule30Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,7 +458,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KM4Q5Z4QE8;
-				INFOPLIST_FILE = Demo_Rule30Tests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
