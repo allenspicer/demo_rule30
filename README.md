@@ -11,7 +11,10 @@ Each row after the first is generated with the set of instructions provided by R
 This application is built for iOS using Swift 4 and Xcode 9.3
 
 Sources: 
+
 https://en.wikipedia.org/wiki/Rule_30
+
 https://en.wikipedia.org/wiki/Cellular_automaton
+
 https://en.wikipedia.org/wiki/Stephen_Wolfram
 
