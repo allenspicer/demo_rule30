@@ -11,18 +11,42 @@ import Foundation
 
 final class Rule30Model : Rule30ModelProtocol {
     
-    private var data = [Int:[Bool]]()
+    private var displayDataDictionary = [Int:[Bool]]()
+    private var modelDataDictionary = [Int:[Bool]]()
     
      func generateRowsAndReturnCount () -> Int{
-        data = generateRows(numberOfRowsToGenerate: 49, numberOfColumnsToGenerate: 21)
-        return data.count
+        modelDataDictionary = generateRows(numberOfRowsToGenerate: 50, numberOfColumnsToGenerate: 60)
+        
+        displayDataDictionary =  modelDataDictionary
+        
+        //we have generated 60 columns for the data model but here we limit the
+        // number of columns displayed to remove interference from the edges of the view
+        for i in displayDataDictionary {
+            var cellCount = i.value.count
+            while cellCount > 21 {
+                if var row = displayDataDictionary[i.key]{
+                    let index = (row.count) - 1
+                    row.remove(at: index)
+                    row.remove(at: 0)
+                    displayDataDictionary[i.key] = row
+                    cellCount -= 2
+                }
+            }
+        }
+        
+        //we could limit rows as well by uncommenting this code
+//        for num in displayDataDictionary where num.key > 50{
+//            displayDataDictionary.removeValue(forKey: num.key)
+//        }
+        
+        return displayDataDictionary.count
     }
 
      func getRow(_ rowIndex :Int ) -> [Bool]?{
         
         //check that the requested index is contained in the dataset
-        if rowIndex < data.count - 1{
-            if let row = data[rowIndex]{
+        if rowIndex < displayDataDictionary.count - 1{
+            if let row = displayDataDictionary[rowIndex]{
                 return row
             }
         }
@@ -32,27 +56,28 @@ final class Rule30Model : Rule30ModelProtocol {
     private func generateRows( numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [Int:[Bool]]{
         
         // if data has not already been generated
-        if (data.count == 0){
+        if (displayDataDictionary.count == 0){
         
             //split total to create a first row with just one true value in the middle
             //and all other values set to false
-            let oneSideOfColumns = (numberOfColumnsToGenerate - 1) / 2
+            let oneSideOfColumns = (numberOfColumnsToGenerate) / 2
             let firstRow = [ 0 : [Bool](repeating: false, count: oneSideOfColumns) + [true] + [Bool](repeating: false, count: oneSideOfColumns)]
-            data = firstRow
+            displayDataDictionary = firstRow
             
             //generate rows after this inital row
             for x in 1...numberOfRowsToGenerate{
                 var rowArray = [Bool]()
                 
                 for y in 0...numberOfColumnsToGenerate{
-                    guard let previousRow = data[x-1] else {return data}
-                    guard let cellBoolValue = isCellTrue(previousRow, indexForCell: y) else {return data}
+                    guard let previousRow = displayDataDictionary[x-1] else {return displayDataDictionary}
+                    guard let cellBoolValue = isCellTrue(previousRow, indexForCell: y) else {return displayDataDictionary}
                     rowArray.append(cellBoolValue)
                 }
-                data[x] = rowArray
+                displayDataDictionary[x] = rowArray
             }
         }
-        return data
+
+        return displayDataDictionary
     }
     
     internal func isCellTrue(_ previousRowArrayOfBools : [Bool], indexForCell : Int ) -> Bool?{
