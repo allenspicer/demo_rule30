@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
-    var numberOfRows = Int()
-    var model = Rule30Model()
+    private var numberOfRows = Int()
+    private var model = Rule30Model()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     //async call to the data model to create data
     //then refresh tableview
-    func createDataAndLoadTableView(){
+    private func createDataAndLoadTableView(){
         DispatchQueue.main.async {
             self.numberOfRows = self.model.generateRowsAndReturnCount()
             self.tableView.reloadData()
@@ -33,11 +33,13 @@ class ViewController: UIViewController {
     }
     
     //turn row of bools into a row of views for use by the tableview
-    func arrayOfViews(_ arrayOfBools : [Bool]?) -> [UIView]{
+    private func arrayOfViews(_ arrayOfBools : [Bool]?) -> [UIView]{
         var array = [UIView]()
         guard let boolArray = arrayOfBools else {return array}
         for bool in boolArray{
             let view = UIView()
+            
+            //set cell color based on bool value
             if (bool){
                 view.backgroundColor = .white
             }else{
@@ -54,11 +56,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfRows
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         let stack = cell.stackView as UIStackView
         guard let currentArray = model.getRow(indexPath.row) else {return cell}
@@ -70,7 +72,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 15
     }
 }

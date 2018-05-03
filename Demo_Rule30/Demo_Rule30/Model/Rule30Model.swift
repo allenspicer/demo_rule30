@@ -9,16 +9,16 @@
 import Foundation
 
 
-class Rule30Model : Rule30ModelProtocol {
+final class Rule30Model : Rule30ModelProtocol {
     
-    var data = [Int:[Bool]]()
+    private var data = [Int:[Bool]]()
     
-    func generateRowsAndReturnCount () -> Int{
+     func generateRowsAndReturnCount () -> Int{
         data = generateRows(numberOfRowsToGenerate: 49, numberOfColumnsToGenerate: 21)
         return data.count
     }
 
-    func getRow(_ rowIndex :Int ) -> [Bool]?{
+     func getRow(_ rowIndex :Int ) -> [Bool]?{
         
         //check that the requested index is contained in the dataset
         if rowIndex < data.count - 1{
@@ -29,7 +29,7 @@ class Rule30Model : Rule30ModelProtocol {
         return nil
     }
     
-    func generateRows( numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [Int:[Bool]]{
+    private func generateRows( numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [Int:[Bool]]{
         
         // if data has not already been generated
         if (data.count == 0){
@@ -55,11 +55,11 @@ class Rule30Model : Rule30ModelProtocol {
         return data
     }
     
-    func isCellTrue(_ previousRowArrayOfBools : [Bool], indexForCell : Int ) -> Bool?{
+    internal func isCellTrue(_ previousRowArrayOfBools : [Bool], indexForCell : Int ) -> Bool?{
         
         //if the cell in question is on the edge
         //we return false for the cell value
-        //this is a catch all to allow the function logic to work
+        //this is a catch all to allow the private function logic to work
         if (indexForCell + 1 > previousRowArrayOfBools.count - 1 || indexForCell - 1 < 0){
             return false
         }

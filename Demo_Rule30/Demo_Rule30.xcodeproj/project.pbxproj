@@ -131,8 +131,8 @@
 		95E3A3D4209B56240058239F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				95E3A3D2209B561B0058239F /* Rule30Model.swift */,
 				95E3A3D5209B57780058239F /* Rule30ModelProtocol.swift */,
+				95E3A3D2209B561B0058239F /* Rule30Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
