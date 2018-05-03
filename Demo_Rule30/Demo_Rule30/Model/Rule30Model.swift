@@ -15,13 +15,16 @@ class Rule30Model : Rule30ModelProtocol {
     
     func generateRowsAndReturnCount () -> Int{
         
+        data = [ 0 : [Bool](repeating: false, count: 10) + [true] + [Bool](repeating: false, count: 10)]
+        
         return data.count
     }
 
     func getRow(_ rowIndex :Int ) -> [Bool]?{
         
+        return data[rowIndex]
+        
         //check that the requested index is contained in the dataset
-        return nil
     }
     
     func isCellTrue(_ previousRowArrayOfBools : [Bool], indexForCell : Int ) -> Bool?{

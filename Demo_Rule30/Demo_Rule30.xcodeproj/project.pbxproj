@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95BCDD9A209B8BA3008BA3A3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */; };
 		95E3A3B0209B54F90058239F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3AF209B54F90058239F /* AppDelegate.swift */; };
 		95E3A3B2209B54F90058239F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3B1209B54F90058239F /* ViewController.swift */; };
 		95E3A3B5209B54F90058239F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B3209B54F90058239F /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		95E3A3AC209B54F90058239F /* Demo_Rule30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Rule30.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E3A3AF209B54F90058239F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95E3A3B1209B54F90058239F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				95E3A3B6209B54FB0058239F /* Assets.xcassets */,
 				95E3A3B8209B54FB0058239F /* LaunchScreen.storyboard */,
 				95E3A3B3209B54F90058239F /* Main.storyboard */,
+				95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BCDD9A209B8BA3008BA3A3 /* TableViewCell.swift in Sources */,
 				95E3A3D3209B561B0058239F /* Rule30Model.swift in Sources */,
 				95E3A3B2209B54F90058239F /* ViewController.swift in Sources */,
 				95E3A3D6209B57780058239F /* Rule30ModelProtocol.swift in Sources */,
