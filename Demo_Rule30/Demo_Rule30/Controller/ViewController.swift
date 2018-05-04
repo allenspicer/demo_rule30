@@ -61,7 +61,7 @@ final class ViewController: UIViewController, colorDelegate {
         return array
     }
 
-    //invert colors for complementary title color
+    //invert color components for complementary title color
     private func colorComplement(color: UIColor) -> UIColor{
         let ciColor = CIColor(color: color)
         return UIColor(red: 1.0 - ciColor.red, green: 1.0 - ciColor.green, blue: 1.0 - ciColor.blue, alpha: 1.0)
