@@ -82,6 +82,7 @@
                     <connections>
                         <outlet property="colorPicker" destination="1ly-eH-9ml" id="wkn-2f-eFT"/>
                         <outlet property="tableView" destination="sI4-aL-Rzy" id="MZI-II-a0K"/>
+                        <outlet property="titleLabel" destination="6vU-iM-6a9" id="eak-RZ-Thp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

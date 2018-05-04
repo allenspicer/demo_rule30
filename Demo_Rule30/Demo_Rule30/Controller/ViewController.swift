@@ -12,6 +12,7 @@ final class ViewController: UIViewController, colorDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var colorPicker: ColorPicker!
+    @IBOutlet weak var titleLabel: UILabel!
     
     private var numberOfRows = Int()
     private var model = Rule30Model()
@@ -37,6 +38,7 @@ final class ViewController: UIViewController, colorDelegate {
     
     func pickedColor(color: UIColor) {
         cellColor = color
+        titleLabel.textColor = colorComplement(color: color)
         self.tableView.reloadData()
     }
     
@@ -55,10 +57,16 @@ final class ViewController: UIViewController, colorDelegate {
             }
             array.append(view)
         }
-        
         return array
     }
 
+    //invert colors for complementary title color
+    private func colorComplement(color: UIColor) -> UIColor{
+        let ciColor = CIColor(color: color)
+        return UIColor(red: 1.0 - ciColor.red, green: 1.0 - ciColor.green, blue: 1.0 - ciColor.blue, alpha: 1.0)
+    }
+    
+    
 }
 
 
