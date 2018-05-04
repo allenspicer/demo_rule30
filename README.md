@@ -1,4 +1,4 @@
-# demo_rule30
+# Rule 30 Demo App
 A demonstration of the elementary cellular automaton rule known as "rule 30"
 
 Rule 30 is a set of rules used to describe the behavior of cellular automata and postulated by Stephen Wolfram to explain how a simple set of rules create random behavior in nature. 
@@ -19,4 +19,8 @@ https://en.wikipedia.org/wiki/Rule_30
 https://en.wikipedia.org/wiki/Cellular_automaton
 
 https://en.wikipedia.org/wiki/Stephen_Wolfram
+
+Color Picker inspired by: 
+
+https://github.com/DejanEnspyra/ColorPicker
 
