@@ -8,18 +8,21 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, colorDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var colorPicker: ColorPicker!
     
     private var numberOfRows = Int()
     private var model = Rule30Model()
+    var cellColor = UIColor.black
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
+        colorPicker.delegate = self
         createDataAndLoadTableView()
     }
     
@@ -30,6 +33,11 @@ final class ViewController: UIViewController {
             self.numberOfRows = self.model.generateRowsAndReturnCount()
             self.tableView.reloadData()
         }
+    }
+    
+    func pickedColor(color: UIColor) {
+        cellColor = color
+        self.tableView.reloadData()
     }
     
     //turn row of bools into a row of views for use by the tableview
@@ -43,7 +51,7 @@ final class ViewController: UIViewController {
             if (bool){
                 view.backgroundColor = .white
             }else{
-                view.backgroundColor = .black
+                view.backgroundColor = cellColor
             }
             array.append(view)
         }
@@ -72,7 +80,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return cell
-        
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

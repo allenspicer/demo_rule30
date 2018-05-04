@@ -19,8 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ly-eH-9ml" customClass="ColorPicker" customModule="Demo_Rule30" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ipr-zK-KOi"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sI4-aL-Rzy">
-                                <rect key="frame" x="0.0" y="84.5" width="375" height="582.5"/>
+                                <rect key="frame" x="0.0" y="117" width="375" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qBn-sj-La8" customClass="TableViewCell" customModule="Demo_Rule30" customModuleProvider="target">
@@ -59,17 +66,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sI4-aL-Rzy" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.9" id="0KF-Xl-EX3"/>
+                            <constraint firstItem="sI4-aL-Rzy" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.85" id="0KF-Xl-EX3"/>
                             <constraint firstItem="6vU-iM-6a9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6We-Qi-WQl"/>
                             <constraint firstItem="sI4-aL-Rzy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-375" id="9eo-xz-XCZ"/>
                             <constraint firstItem="sI4-aL-Rzy" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="BJs-hJ-h9t"/>
                             <constraint firstItem="6vU-iM-6a9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HOg-NA-r5u"/>
+                            <constraint firstItem="1ly-eH-9ml" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IEj-oj-T5n"/>
+                            <constraint firstItem="sI4-aL-Rzy" firstAttribute="top" secondItem="1ly-eH-9ml" secondAttribute="bottom" id="QyE-Sf-tMZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sI4-aL-Rzy" secondAttribute="bottom" id="hCd-JU-mXS"/>
                             <constraint firstItem="6vU-iM-6a9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="rNN-di-o0w"/>
+                            <constraint firstItem="1ly-eH-9ml" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="raS-H8-F83"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="colorPicker" destination="1ly-eH-9ml" id="wkn-2f-eFT"/>
                         <outlet property="tableView" destination="sI4-aL-Rzy" id="MZI-II-a0K"/>
                     </connections>
                 </viewController>
