@@ -38,6 +38,7 @@ final class ViewController: UIViewController, colorDelegate {
     
     func pickedColor(color: UIColor) {
         cellColor = color
+        view.backgroundColor = color
         titleLabel.textColor = colorComplement(color: color)
         self.tableView.reloadData()
     }
