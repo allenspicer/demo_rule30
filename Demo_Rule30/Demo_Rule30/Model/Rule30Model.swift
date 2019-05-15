@@ -2,7 +2,7 @@
 //  Rule30Model.swift
 //  Demo_Rule30
 //
-//  Created by uBack on 5/3/18.
+//  Created by Allen Spicer on 5/3/18.
 //  Copyright © 2018 rule30Demo. All rights reserved.
 //
 
@@ -11,8 +11,8 @@ import Foundation
 
 final class Rule30Model : Rule30ModelProtocol {
     
-    private var displayDataDictionary = [Int:[Bool]]()
-    private var modelDataDictionary = [Int:[Bool]]()
+    internal var displayDataDictionary = [Int:[Bool]]()
+    internal var modelDataDictionary = [Int:[Bool]]()
     
      func generateRowsAndReturnCount () -> Int{
         modelDataDictionary = generateRows(numberOfRowsToGenerate: 200, numberOfColumnsToGenerate: 200)
