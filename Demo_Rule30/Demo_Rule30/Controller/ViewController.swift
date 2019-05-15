@@ -2,13 +2,13 @@
 //  ViewController.swift
 //  Demo_Rule30
 //
-//  Created by uBack on 5/3/18.
+//  Created by Allen Spicer on 5/3/18.
 //  Copyright © 2018 rule30Demo. All rights reserved.
 //
 
 import UIKit
 
-final class ViewController: UIViewController, colorDelegate {
+final class ViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var colorPicker: ColorPicker!
@@ -36,13 +36,6 @@ final class ViewController: UIViewController, colorDelegate {
         }
     }
     
-    func pickedColor(color: UIColor) {
-        cellColor = color
-        view.backgroundColor = color
-        titleLabel.textColor = colorComplement(color: color)
-        self.tableView.reloadData()
-    }
-    
     //turn row of bools into a row of views for use by the tableview
     private func arrayOfViews(_ arrayOfBools : [Bool]?) -> [UIView]{
         var array = [UIView]()
@@ -66,8 +59,6 @@ final class ViewController: UIViewController, colorDelegate {
         let ciColor = CIColor(color: color)
         return UIColor(red: 1.0 - ciColor.red, green: 1.0 - ciColor.green, blue: 1.0 - ciColor.blue, alpha: 1.0)
     }
-    
-    
 }
 
 
@@ -93,6 +84,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 15
+    }
+}
+
+
+extension ViewController: colorDelegate {
+    
+    func pickedColor(color: UIColor) {
+        cellColor = color
+        view.backgroundColor = color
+        titleLabel.textColor = colorComplement(color: color)
+        self.tableView.reloadData()
     }
 }
 
