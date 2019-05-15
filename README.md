@@ -10,9 +10,9 @@ Each row after the first is generated with the set of instructions provided by R
 Two sets of data are used in the model. The model data (modelDataDictionary) allows us to calculate the values of a large grid of cells. The display data (displayDataDictionary) allows us to display a central portion of these cells. This removes interference from the edges of the view and displays the central randomized cells.
 
 
-This application is built for iOS 11.3 using Swift 4 and Xcode 9.3
+This application is built for iOS 11.3 using Swift 4 and Xcode 10.1
 
-Supports: iPhone X, iPhone SE, iPhone 8 Plus, iPhone 8, iPhone 7 Plus, iPhone 7, iPhone 6s Plus, iPhone 6s, iPhone 6 Plus, iPhone 6, iPhone 5s
+Supports: iPhone XS Max, iPhone XS, iPhone XR, iPhone X, iPhone SE, iPhone 8 Plus, iPhone 8, iPhone 7 Plus, iPhone 7, iPhone 6s Plus, iPhone 6s, iPhone 6 Plus, iPhone 6, iPhone 5s
 
 
 Sources: 
