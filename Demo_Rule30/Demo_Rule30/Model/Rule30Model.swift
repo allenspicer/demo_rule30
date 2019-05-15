@@ -11,33 +11,19 @@ import Foundation
 
 final class Rule30Model : Rule30ModelProtocol {
     
-    internal var displayDataDictionary = [Int:[Bool]]()
-    internal var modelDataDictionary = [Int:[Bool]]()
+    internal var displayDataDictionary = [[Bool]]()
+    internal var modelDataDictionary = [[Bool]]()
     
      func generateRowsAndReturnCount () -> Int{
         modelDataDictionary = generateRows(numberOfRowsToGenerate: 200, numberOfColumnsToGenerate: 200)
-        
         displayDataDictionary =  modelDataDictionary
         
         //we have generated 60 columns for the data model but here we limit the
         // number of columns displayed to remove interference from the edges of the view
-        for i in displayDataDictionary {
-            var cellCount = i.value.count
-            while cellCount > 21 {
-                if var row = displayDataDictionary[i.key]{
-                    let index = (row.count) - 1
-                    row.remove(at: index)
-                    row.remove(at: 0)
-                    displayDataDictionary[i.key] = row
-                    cellCount -= 2
-                }
-            }
+        for (index, rowArray) in displayDataDictionary.enumerated() {
+            let middle = rowArray.count/2
+            displayDataDictionary[index] = Array(rowArray[middle - 10...middle + 10])
         }
-        
-        //we could limit rows as well by uncommenting this code
-//        for num in displayDataDictionary where num.key > 50{
-//            displayDataDictionary.removeValue(forKey: num.key)
-//        }
         
         return displayDataDictionary.count
     }
@@ -46,14 +32,12 @@ final class Rule30Model : Rule30ModelProtocol {
         
         //check that the requested index is contained in the dataset
         if rowIndex < displayDataDictionary.count - 1{
-            if let row = displayDataDictionary[rowIndex]{
-                return row
-            }
+            return displayDataDictionary[rowIndex]
         }
         return nil
     }
     
-    private func generateRows( numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [Int:[Bool]]{
+    private func generateRows( numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [[Bool]]{
         
         // if data has not already been generated
         if (displayDataDictionary.count == 0){
@@ -61,7 +45,7 @@ final class Rule30Model : Rule30ModelProtocol {
             //split total to create a first row with just one true value in the middle
             //and all other values set to false
             let oneSideOfColumns = (numberOfColumnsToGenerate) / 2
-            let firstRow = [ 0 : [Bool](repeating: false, count: oneSideOfColumns) + [true] + [Bool](repeating: false, count: oneSideOfColumns)]
+            let firstRow = [[Bool](repeating: false, count: oneSideOfColumns) + [true] + [Bool](repeating: false, count: oneSideOfColumns)]
             displayDataDictionary = firstRow
             
             //generate rows after this inital row
@@ -69,11 +53,12 @@ final class Rule30Model : Rule30ModelProtocol {
                 var rowArray = [Bool]()
                 
                 for y in 0...numberOfColumnsToGenerate{
-                    guard let previousRow = displayDataDictionary[x-1] else {return displayDataDictionary}
+                    if x-1 > displayDataDictionary.count - 1 {return displayDataDictionary}
+                    let previousRow = displayDataDictionary[x-1]
                     guard let cellBoolValue = isCellTrue(previousRow, indexForCell: y) else {return displayDataDictionary}
                     rowArray.append(cellBoolValue)
                 }
-                displayDataDictionary[x] = rowArray
+                displayDataDictionary.append(rowArray)
             }
         }
 
