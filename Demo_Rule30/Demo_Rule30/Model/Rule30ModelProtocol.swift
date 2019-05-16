@@ -14,7 +14,7 @@ protocol Rule30ModelProtocol {
     
     func getRow(_ rowIndex :Int ) -> [Bool]?
     
-    func generateRowsAndReturnCount () -> Int
+    func createModelAndDisplayDataAndReturnColumns() -> Int
 
 }
 

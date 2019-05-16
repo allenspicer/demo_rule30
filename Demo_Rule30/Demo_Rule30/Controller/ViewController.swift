@@ -8,14 +8,14 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+class ViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var colorPicker: ColorPicker!
     @IBOutlet weak var titleLabel: UILabel!
     
-    private var numberOfRows = Int()
-    private var model = Rule30Model()
+    var numberOfRows = Int()
+    var model = Rule30Model()
     var cellColor = UIColor.black
 
     override func viewDidLoad() {
@@ -29,15 +29,15 @@ final class ViewController: UIViewController {
     
     //async call to the data model to create data
     //then refresh tableview
-    private func createDataAndLoadTableView(){
+    func createDataAndLoadTableView(){
         DispatchQueue.main.async {
-            self.numberOfRows = self.model.generateRowsAndReturnCount()
+            self.numberOfRows = self.model.createModelAndDisplayDataAndReturnColumns()
             self.tableView.reloadData()
         }
     }
     
     //turn row of bools into a row of views for use by the tableview
-    private func arrayOfViews(_ arrayOfBools : [Bool]?) -> [UIView]{
+    func arrayOfViews(_ arrayOfBools : [Bool]?) -> [UIView]{
         var array = [UIView]()
         guard let boolArray = arrayOfBools else {return array}
         for bool in boolArray{

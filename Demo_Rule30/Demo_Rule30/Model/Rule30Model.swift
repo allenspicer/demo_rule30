@@ -14,7 +14,7 @@ final class Rule30Model : Rule30ModelProtocol {
     internal var displayDataDictionary = [[Bool]]()
     internal var modelDataDictionary = [[Bool]]()
     
-     func generateRowsAndReturnCount () -> Int{
+     func createModelAndDisplayDataAndReturnColumns() -> Int{
         modelDataDictionary = generateRows(numberOfRowsToGenerate: 200, numberOfColumnsToGenerate: 200)
         displayDataDictionary =  modelDataDictionary
         
@@ -37,7 +37,7 @@ final class Rule30Model : Rule30ModelProtocol {
         return nil
     }
     
-    private func generateRows( numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [[Bool]]{
+     func generateRows(numberOfRowsToGenerate: Int, numberOfColumnsToGenerate: Int) -> [[Bool]]{
         
         // if data has not already been generated
         if (displayDataDictionary.count == 0){
@@ -49,10 +49,10 @@ final class Rule30Model : Rule30ModelProtocol {
             displayDataDictionary = firstRow
             
             //generate rows after this inital row
-            for x in 1...numberOfRowsToGenerate{
+            for x in 1..<numberOfRowsToGenerate{
                 var rowArray = [Bool]()
                 
-                for y in 0...numberOfColumnsToGenerate{
+                for y in 0..<numberOfColumnsToGenerate{
                     if x-1 > displayDataDictionary.count - 1 {return displayDataDictionary}
                     let previousRow = displayDataDictionary[x-1]
                     guard let cellBoolValue = isCellTrue(previousRow, indexForCell: y) else {return displayDataDictionary}

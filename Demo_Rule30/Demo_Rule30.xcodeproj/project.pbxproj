@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95434841228D0FDF0060CBFF /* Demo_Rule30_VC_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543483F228D0DBC0060CBFF /* Demo_Rule30_VC_Tests.swift */; };
 		95BCDD9A209B8BA3008BA3A3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */; };
 		95BCDD9C209BE63D008BA3A3 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCDD9B209BE63D008BA3A3 /* ColorPickerView.swift */; };
 		95E3A3B0209B54F90058239F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3AF209B54F90058239F /* AppDelegate.swift */; };
@@ -14,7 +15,7 @@
 		95E3A3B5209B54F90058239F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B3209B54F90058239F /* Main.storyboard */; };
 		95E3A3B7209B54FB0058239F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B6209B54FB0058239F /* Assets.xcassets */; };
 		95E3A3BA209B54FB0058239F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95E3A3B8209B54FB0058239F /* LaunchScreen.storyboard */; };
-		95E3A3C5209B54FC0058239F /* Demo_Rule30Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */; };
+		95E3A3C5209B54FC0058239F /* Demo_Rule30_Model_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3C4209B54FC0058239F /* Demo_Rule30_Model_Tests.swift */; };
 		95E3A3D3209B561B0058239F /* Rule30Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3D2209B561B0058239F /* Rule30Model.swift */; };
 		95E3A3D6209B57780058239F /* Rule30ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3D5209B57780058239F /* Rule30ModelProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9543483F228D0DBC0060CBFF /* Demo_Rule30_VC_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo_Rule30_VC_Tests.swift; sourceTree = "<group>"; };
 		95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		95BCDD9B209BE63D008BA3A3 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		95E3A3AC209B54F90058239F /* Demo_Rule30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Rule30.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +42,7 @@
 		95E3A3B9209B54FB0058239F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95E3A3BB209B54FB0058239F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95E3A3C0209B54FC0058239F /* Demo_Rule30Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_Rule30Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_Rule30Tests.swift; sourceTree = "<group>"; };
+		95E3A3C4209B54FC0058239F /* Demo_Rule30_Model_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_Rule30_Model_Tests.swift; sourceTree = "<group>"; };
 		95E3A3C6209B54FC0058239F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95E3A3D2209B561B0058239F /* Rule30Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule30Model.swift; sourceTree = "<group>"; };
 		95E3A3D5209B57780058239F /* Rule30ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule30ModelProtocol.swift; sourceTree = "<group>"; };
@@ -96,7 +98,8 @@
 		95E3A3C3209B54FC0058239F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				95E3A3C4209B54FC0058239F /* Demo_Rule30Tests.swift */,
+				9543483F228D0DBC0060CBFF /* Demo_Rule30_VC_Tests.swift */,
+				95E3A3C4209B54FC0058239F /* Demo_Rule30_Model_Tests.swift */,
 				95E3A3C6209B54FC0058239F /* Info.plist */,
 			);
 			path = Tests;
@@ -193,6 +196,7 @@
 					};
 					95E3A3BF209B54FC0058239F = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 						TestTargetID = 95E3A3AB209B54F90058239F;
 					};
 				};
@@ -254,7 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E3A3C5209B54FC0058239F /* Demo_Rule30Tests.swift in Sources */,
+				95434841228D0FDF0060CBFF /* Demo_Rule30_VC_Tests.swift in Sources */,
+				95E3A3C5209B54FC0058239F /* Demo_Rule30_Model_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rule30Demo.Demo-Rule30Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo_Rule30.app/Demo_Rule30";
 			};
@@ -476,7 +481,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "rule30Demo.Demo-Rule30Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo_Rule30.app/Demo_Rule30";
 			};
