@@ -9,10 +9,10 @@
 import UIKit
 
 @objc protocol colorDelegate{
-    @objc optional func pickedColor(color:UIColor)
+    @objc optional func setColors(color:UIColor)
 }
 
-class ColorPicker: UIView {
+class ColorPickerView: UIView {
     var currentSelectionX: CGFloat = 0;
     var selectedColor: UIColor!
     var delegate: colorDelegate!
@@ -38,18 +38,17 @@ class ColorPicker: UIView {
     }
     
     
-    private func updateColor(touch: UITouch){
-        
+    func updateColor(touch: UITouch){
         //get color at x coordinate location of touch
         currentSelectionX = (touch.location(in: self).x)
         selectedColor = UIColor(hue: (currentSelectionX / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0)
-        self.delegate.pickedColor!(color: selectedColor)
+        self.delegate.setColors!(color: selectedColor)
         self.setNeedsDisplay()
     }
 }
 
 
-extension ColorPicker {
+extension ColorPickerView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch =  touches.first
         updateColor(touch: touch!)
