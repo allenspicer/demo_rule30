@@ -30,13 +30,7 @@ class Demo_Rule30_CPV_Tests: XCTestCase {
         //WHEN
         colorPickerView.updateColor(touch: touch)
         
-        
         //THEN
-        
-        
+        XCTAssertNotNil(colorPickerView.selectedColor)
     }
-    
-    
-    
-    
 }

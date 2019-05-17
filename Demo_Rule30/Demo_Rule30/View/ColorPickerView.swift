@@ -42,8 +42,10 @@ class ColorPickerView: UIView {
         //get color at x coordinate location of touch
         currentSelectionX = (touch.location(in: self).x)
         selectedColor = UIColor(hue: (currentSelectionX / self.frame.size.width), saturation: 1.0, brightness: 1.0, alpha: 1.0)
-        self.delegate.setColors!(color: selectedColor)
-        self.setNeedsDisplay()
+        if let delegate = self.delegate {
+            delegate.setColors!(color: selectedColor)
+            self.setNeedsDisplay()
+        }
     }
 }
 
