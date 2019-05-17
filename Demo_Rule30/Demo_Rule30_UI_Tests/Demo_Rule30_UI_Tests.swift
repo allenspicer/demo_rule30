@@ -28,6 +28,7 @@ class Demo_Rule30_UI_Tests: XCTestCase {
         
         //WHEN
         colorPicker.tap()
+        colorPicker.swipeRight()
         
         //THEN
         XCTAssertTrue(colorPicker.isHittable)
