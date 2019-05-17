@@ -16,6 +16,7 @@ class Demo_Rule30_VC_Tests: XCTestCase {
     override func setUp() {
         super.setUp()
         viewController = ViewController()
+        viewController.tableView = UITableView()
     }
     
     override func tearDown() {
@@ -41,6 +42,24 @@ class Demo_Rule30_VC_Tests: XCTestCase {
         //THEN
         XCTAssert(arrayOfViews.count == 3)
     }
+    
+    func test_color_complement(){
+        //GIVEN
+        let initialColor = UIColor.black
+        
+        //WHEN
+        let convertedColor = viewController.colorComplement(color: initialColor)
+        let ciColor = CIColor(color: convertedColor)
+        let red = ciColor.red
+        let blue = ciColor.red
+        let green = ciColor.red
 
+        
+        //THEN
+        let complement = CIColor(color: .white)
+        XCTAssert(red == complement.red)
+        XCTAssert(blue == complement.blue)
+        XCTAssert(green == complement.green)
+    }
     
 }
