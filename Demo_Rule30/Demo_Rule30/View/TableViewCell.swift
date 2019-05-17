@@ -18,12 +18,6 @@ final class TableViewCell: UITableViewCell {
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
         stackView.axis = .horizontal
-        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-    }
-
 
 }
