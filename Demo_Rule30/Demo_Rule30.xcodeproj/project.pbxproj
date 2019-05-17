@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95434841228D0FDF0060CBFF /* Demo_Rule30_VC_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543483F228D0DBC0060CBFF /* Demo_Rule30_VC_Tests.swift */; };
+		95434844228E479C0060CBFF /* Demo_Rule30_CPV_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95434842228E47870060CBFF /* Demo_Rule30_CPV_Tests.swift */; };
 		95BCDD9A209B8BA3008BA3A3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */; };
 		95BCDD9C209BE63D008BA3A3 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCDD9B209BE63D008BA3A3 /* ColorPickerView.swift */; };
 		95E3A3B0209B54F90058239F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3A3AF209B54F90058239F /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		9543483F228D0DBC0060CBFF /* Demo_Rule30_VC_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo_Rule30_VC_Tests.swift; sourceTree = "<group>"; };
+		95434842228E47870060CBFF /* Demo_Rule30_CPV_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo_Rule30_CPV_Tests.swift; sourceTree = "<group>"; };
 		95BCDD99209B8BA3008BA3A3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		95BCDD9B209BE63D008BA3A3 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		95E3A3AC209B54F90058239F /* Demo_Rule30.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_Rule30.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 			children = (
 				9543483F228D0DBC0060CBFF /* Demo_Rule30_VC_Tests.swift */,
 				95E3A3C4209B54FC0058239F /* Demo_Rule30_Model_Tests.swift */,
+				95434842228E47870060CBFF /* Demo_Rule30_CPV_Tests.swift */,
 				95E3A3C6209B54FC0058239F /* Info.plist */,
 			);
 			path = Tests;
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95434841228D0FDF0060CBFF /* Demo_Rule30_VC_Tests.swift in Sources */,
+				95434844228E479C0060CBFF /* Demo_Rule30_CPV_Tests.swift in Sources */,
 				95E3A3C5209B54FC0058239F /* Demo_Rule30_Model_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
