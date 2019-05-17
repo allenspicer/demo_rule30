@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var colorPicker: ColorPicker!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var colorPickerView: ColorPickerView!
+    @IBOutlet var titleLabel: UILabel!
     
     var numberOfRows = Int()
     var model = Rule30Model()
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
-        colorPicker.delegate = self
+        colorPickerView.delegate = self
         createDataAndLoadTableView()
     }
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     }
 
     //invert color components for complementary title color
-    private func colorComplement(color: UIColor) -> UIColor{
+    func colorComplement(color: UIColor) -> UIColor{
         let ciColor = CIColor(color: color)
         return UIColor(red: 1.0 - ciColor.red, green: 1.0 - ciColor.green, blue: 1.0 - ciColor.blue, alpha: 1.0)
     }
@@ -90,7 +90,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: colorDelegate {
     
-    func pickedColor(color: UIColor) {
+    func setColors(color: UIColor) {
         cellColor = color
         view.backgroundColor = color
         titleLabel.textColor = colorComplement(color: color)
